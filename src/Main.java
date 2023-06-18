@@ -1,3 +1,5 @@
+import java.sql.SQLOutput;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -7,7 +9,18 @@ public class Main {
         task4();
 
 
+
     }
+
+    public static int[] generateRandomArray() {
+        java.util.Random random = new java.util.Random();
+        int[] arr = new int[30];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(100_000) + 100_000;
+        }
+        return arr;
+    }
+
 
     static public void task1() {
         /**
@@ -17,6 +30,14 @@ public class Main {
          */
         System.out.println("Задача 1");
 
+        int[ ] arr = generateRandomArray();
+
+        int[] salary = new int[30];
+        int sum = 0;
+        for (int element : arr) {
+            sum += element;
+        }
+        System.out.println("Сумма трат за месяц составила " + sum + " рублей");
 
 
         System.out.println();
@@ -31,8 +52,24 @@ public class Main {
          */
         System.out.println("Задача 2");
 
+        int[ ] arr = generateRandomArray();
 
+        int[] salary = new int[30];
+        int maxSalary = salary.length;
+        int minSalary = salary.length;
+        for (final int current : salary) {
+            if (current > maxSalary) {
+                maxSalary = current;
+            }
+        }
+        System.out.println(maxSalary);
 
+        for (final int current : salary) {
+            if (current < minSalary) {
+                minSalary = current;
+            }
+        }
+        System.out.println(minSalary);
 
 
         System.out.println();
@@ -47,7 +84,15 @@ public class Main {
          */
         System.out.println("Задача 3");
 
+        int[ ] arr = generateRandomArray();
 
+        int[] salary = new int[30];
+        int sum = 0;
+        for (double element : arr) {
+            sum += element;
+            sum = sum / salary.length - 1;
+        }
+        System.out.println("Средняя сумма трат за месяц составила " + sum + " рублей");
 
 
         System.out.println();
@@ -65,6 +110,10 @@ public class Main {
          * Важно: не используйте дополнительные массивы для решения этой задачи. Необходимо корректно пройти по массиву циклом и распечатать его элементы в правильном порядке.
          */
         System.out.println("Задача 4");
+
+        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        Arrays.sort(reverseFullName);
+        System.out.println(Arrays.toString(reverseFullName));
 
 
 
