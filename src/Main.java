@@ -55,8 +55,8 @@ public class Main {
         int[ ] arr = generateRandomArray();
 
         int[] salary = new int[30];
-        int maxSalary = salary.length;
-        int minSalary = salary.length;
+        int maxSalary = arr[0];
+        int minSalary = arr[0];
         for (final int current : salary) {
             if (current > maxSalary) {
                 maxSalary = current;
@@ -87,11 +87,11 @@ public class Main {
         int[ ] arr = generateRandomArray();
 
         int[] salary = new int[30];
-        int sum = 0;
-        for (double element : arr) {
+        double sum = 0;
+        for (int element : arr) {
             sum += element;
-            sum = sum / salary.length - 1;
         }
+            sum = sum / salary.length;
         System.out.println("Средняя сумма трат за месяц составила " + sum + " рублей");
 
 
@@ -111,9 +111,9 @@ public class Main {
          */
         System.out.println("Задача 4");
 
-        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        Arrays.sort(reverseFullName);
-        System.out.println(Arrays.toString(reverseFullName));
+        int[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for(int i = reverseFullName - 1; i >=0; i--)
+        System.out.println(reverseFullName);
 
 
 
